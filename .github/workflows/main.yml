@@ -40,6 +40,7 @@ jobs:
               {
                 echo "Repository belum diclone, cloning...";
                 mkdir -p ~/senpro/503393/modul02;
+                cd ~/senpro/503393/modul02;
                 git clone https://github.com/WafiAfdi/senpro-github-action.git;
                 cd ~/senpro/503393/modul02/senpro-github-action;
                 echo "Install Package dan Build Project";
