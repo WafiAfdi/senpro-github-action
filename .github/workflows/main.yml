@@ -32,26 +32,26 @@ jobs:
           username: ${{secrets.PASSWORD}}
           port: ${{secrets.PORT}}
           script: |
-          eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/ssh-praktikan26
-          echo "Cek folder project";
-          [ ! -d "${HOME}/senpro/503393/modul02/senpro-github-action/"] && 
-            {
-              echo "Repository belum diclone, cloning...";
-              mkdir -p ~/senpro/503393/modul02;
-              git clone https://github.com/WafiAfdi/senpro-github-action-fork.git;
-              cd ~/senpro/503393/modul02/senpro-github-action-fork;
-              echo "Install Package dan Build Project";
-              npm install;
-              npm run build;
-            } || 
-            {
-              echo "Repository sudah ada, Building...";
-              cd ~/senpro/503393/modul02/senpro-github-action-fork;
-              git restore .;
-              git pull origin main;
-              echo "Install Package dan Build Project";
-              npm install;
-              npm run build;
-            }
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/ssh-praktikan26
+            echo "Cek folder project";
+            [ ! -d "${HOME}/senpro/503393/modul02/senpro-github-action/"] && 
+              {
+                echo "Repository belum diclone, cloning...";
+                mkdir -p ~/senpro/503393/modul02;
+                git clone https://github.com/WafiAfdi/senpro-github-action-fork.git;
+                cd ~/senpro/503393/modul02/senpro-github-action-fork;
+                echo "Install Package dan Build Project";
+                npm install;
+                npm run build;
+              } || 
+              {
+                echo "Repository sudah ada, Building...";
+                cd ~/senpro/503393/modul02/senpro-github-action-fork;
+                git restore .;
+                git pull origin main;
+                echo "Install Package dan Build Project";
+                npm install;
+                npm run build;
+              }
 
